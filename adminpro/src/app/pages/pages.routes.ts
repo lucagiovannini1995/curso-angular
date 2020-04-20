@@ -7,11 +7,14 @@ import { NopagefoundComponent } from '../shared/nopagefound/nopagefound.componen
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const pagesRoutes: Routes = [{
     path: '',
     component: PagesComponent,
+    canActivate: [ LoginGuardGuard ],
         children: [ { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard'} },
         { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress'} },
         { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas'} },
@@ -19,6 +22,7 @@ const pagesRoutes: Routes = [{
         { path: 'rxjs', component: RxjsComponent, data: { titulo: 'Rxjs'} },
         { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         { path: 'accout-settings', component: AccoutSettingsComponent, data: { titulo: 'Ajustes del Tema'} },
+        { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'} },
         { path: '**', component: NopagefoundComponent}
     ]
 }];
