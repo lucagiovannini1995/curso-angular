@@ -16,6 +16,7 @@ usuario: Usuario;
 
   ngOnInit() {
     this.usuario = this.usuService.usuario;
+    this.sidebarServ.cargarMenu();
   }
 
 }
