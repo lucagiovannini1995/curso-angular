@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { PagesModule } from './pages/pages.module';
 import { CommonModule } from '@angular/common';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/SharedModule';
 
 
 
@@ -17,16 +19,18 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule,
+   // PagesModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
